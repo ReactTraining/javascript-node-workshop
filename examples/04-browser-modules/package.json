@@ -1,0 +1,10 @@
+{
+  "name": "browser-modules",
+  "type": "module",
+  "scripts": {
+    "start": "http-server app -p 3000"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

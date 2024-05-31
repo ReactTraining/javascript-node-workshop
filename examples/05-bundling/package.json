@@ -1,0 +1,10 @@
+{
+  "name": "bundling",
+  "type": "module",
+  "scripts": {
+    "build": "esbuild app/index.js --bundle --outfile=build/build.js"
+  },
+  "devDependencies": {
+    "esbuild": "0.21.4"
+  }
+}
