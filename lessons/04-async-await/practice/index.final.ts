@@ -34,7 +34,7 @@ async function main() {
 
 // async function getPersonVehicles(id: number): Promise<string[]> {
 //   const response = await fetch(`https://swapi.dev/api/people/${id}`)
-//   const person = await response.json()
+//   const person = await response.json() as Record<string, any>
 
 //   // The above could also be written as
 //   // const person = await fetch(`https://swapi.dev/api/people/${id}`).then((response) => response.json())
@@ -74,7 +74,7 @@ async function main() {
 // async function getPersonVehicles(id: number): Promise<string[]> {
 //   const person = await fetch(`https://swapi.dev/api/people/${id}`).then((response) =>
 //     response.json()
-//   )
+//   )  as Record<string, any>
 //   return person.vehicles
 // }
 

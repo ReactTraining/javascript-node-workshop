@@ -7,19 +7,19 @@ main()
   Practice: 1
 *****************************************/
 
-function wait(ms: number) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, ms)
-  })
-}
+// function wait(ms: number) {
+//   return new Promise((resolve) => {
+//     setTimeout(resolve, ms)
+//   })
+// }
 
-// Re-write main to use async/await
+// // Re-write main to use async/await
 
-function main() {
-  wait(1000).then(() => {
-    console.log('Wait for one second')
-  })
-}
+// function main() {
+//   wait(1000).then(() => {
+//     console.log('Wait for one second')
+//   })
+// }
 
 /****************************************
   Practice: 2
@@ -33,7 +33,7 @@ function main() {
 
 // function getPersonVehicles(id: number): Promise<string[]> {
 //   return fetch(`https://swapi.dev/api/people/${id}`)
-//     .then((response) => response.json())
+//     .then((response) => response.json() as Record<string, any>)
 //     .then((person) => person.vehicles)
 // }
 
@@ -71,9 +71,9 @@ function main() {
 // }
 
 // async function getPersonVehicles(id: number): Promise<string[]> {
-//   const person = await fetch(`https://swapi.dev/api/people/${id}`).then((response) =>
+//   const person = (await fetch(`https://swapi.dev/api/people/${id}`).then((response) =>
 //     response.json()
-//   )
+//   )) as Record<string, any>
 //   return person.vehicles
 // }
 

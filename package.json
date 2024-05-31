@@ -1,22 +1,30 @@
 {
   "name": "javascript-node-workshop",
-  "description": "(c) copyright ReactTraining.com",
   "private": true,
   "scripts": {
     "/////////// NOTES: backslashes in --exec commands for Windows to work": "",
     "/////////// LECTURES:": "",
     "lecture-1": "node lessons/01-js-and-node/lecture",
     "lecture-2": "ts-node lessons/02-promises/lecture/index.ts",
-    "lecture-3": "ts-node lessons/03-async-await/lecture/index.ts",
-    "lecture-4": "ts-node lessons/04-cli/lecture/index.ts",
+    "lecture-3": "",
+    "lecture-4": "ts-node lessons/04-async-await/lecture/index.ts",
+    "lecture-5": "ts-node lessons/05-cli/lecture/index.ts",
     "/////////// PRACTICES:": "",
     "practice-1": "node lessons/01-js-and-node/practice",
     "practice-2": "ts-node lessons/02-promises/practice/index.ts",
-    "practice-3": "ts-node lessons/03-async-await/practice/index.ts",
-    "practice-4": "ts-node lessons/04-cli/practice/index.ts"
+    "practice-3": "",
+    "practice-4": "ts-node lessons/04-async-await/practice/index.ts",
+    "practice-5": "ts-node lessons/05-cli/practice/index.ts"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "readline-sync": "^1.4.10"
   },
   "devDependencies": {
-    "ts-node": "^10.9.2"
+    "@types/node-fetch": "^2.6.11",
+    "@types/readline-sync": "^1.4.8",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
   },
   "prettier": {
     "printWidth": 100,

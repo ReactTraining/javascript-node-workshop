@@ -14,3 +14,5 @@ function signup(user: User) {
 signup({ name: 'brad' }).then(() => {
   console.log('✅ User Added')
 })
+
+// Remember "top-level" await

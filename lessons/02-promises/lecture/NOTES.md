@@ -104,7 +104,7 @@ function getVehicle(url: string) {
 
 function getPersonVehicles(id: number): Promise<string[]> {
   return fetch(`https://swapi.dev/api/people/${id}`)
-    .then((response) => response.json())
+    .then((response) => response.json() as Record<string, any>)
     .then((data) => data.vehicles)
 }
 

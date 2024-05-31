@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "jsx": "react",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    // "noEmitOnError": false,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "lib": ["es2020.promise"]
+  }
+}
