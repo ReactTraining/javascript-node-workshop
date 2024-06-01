@@ -1,6 +1,6 @@
 import express from 'express'
 import createError from 'http-errors'
-import { db } from './db'
+import { query } from './db'
 import { jwtStartSession, jwtVerify, jwtLogout } from './jwt'
 export const router = express.Router()
 
@@ -16,8 +16,8 @@ const requireAuthentication = (
   jwtVerify(req, res)
     .then((userId) => {
       if (userId) {
-        db.query(`SELECT * FROM user WHERE user.id = '${userId}'`)
-          .then((results) => {
+        query(`SELECT id, name FROM user WHERE user.id = '${userId}'`)
+          .then((results: any) => {
             if (results.length === 0) return Promise.reject()
             const user = results[0]
             req.user = user
@@ -49,8 +49,8 @@ router.get('/login', (req, res, next) => {
   const email = 'hello@reacttraining.com'
   const password = 'abc123'
 
-  db.query(`SELECT * FROM user WHERE user.email = '${email}' AND user.password = '${password}'`)
-    .then((results) => {
+  query(`SELECT id FROM user WHERE user.email = '${email}' AND user.password = '${password}'`)
+    .then((results: any) => {
       if (!results || results.length === 0) {
         return Promise.reject(createError(401, '<h1>Login Failed</h1>'))
       }

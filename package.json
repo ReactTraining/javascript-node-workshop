@@ -25,7 +25,12 @@
     "practice-8": "nodemon --exec \"ts-node lessons/08-authentication/practice/index.ts\"  || exit 0"
   },
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cookies": "^0.9.1",
+    "cors": "^2.8.5",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "morgan": "^1.10.0",
     "node-fetch": "^3.3.2",
     "readline-sync": "^1.4.10",
     "sqlite3": "^5.1.7"

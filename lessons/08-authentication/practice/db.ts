@@ -1,18 +1,16 @@
-const data = [{ id: 3, name: 'Fake User', email: 'hello@reacttraining.com' }]
+import path from 'path'
+import sqlite3 from 'sqlite3'
 
-export const db = {
-  query: (sql: string) => {
-    if (
-      sql === "SELECT * FROM user WHERE user.id = '3'" ||
-      sql ===
-        "SELECT * FROM user WHERE user.email = 'hello@reacttraining.com' AND user.password = 'abc123'"
-    ) {
-      return Promise.resolve(data)
-    } else {
-      // Empty array signifies SQL found nothing. Usually databases won't
-      // throw errors if you run an SQL statement that finds nothing, they
-      // just give you no results
-      return Promise.resolve([])
-    }
-  },
+const db = new sqlite3.Database(path.resolve(process.cwd(), 'database.db'))
+
+export function query(sql: string) {
+  return new Promise((resolve, reject) => {
+    db.all(sql, (err, rows) => {
+      if (err) {
+        reject(err.message)
+      } else {
+        resolve(rows || [])
+      }
+    })
+  })
 }

@@ -2,7 +2,8 @@ const fs = require('fs')
 const path = require('path')
 const sqlite3 = require('sqlite3')
 
-const dbPath = path.resolve(__dirname, 'database.db')
+const dbPath = path.resolve(process.cwd(), 'database.db')
+// const dbPath = path.resolve(__dirname, 'database.db')
 try {
   fs.unlinkSync(dbPath)
 } catch {
@@ -14,21 +15,27 @@ function createDB(sql) {
     if (err) console.log(err.message)
 
     // Create a sample table to ensure the database file is actually created
-    db.run('CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name TEXT)', (err) => {
-      if (err) console.error('Error creating table:', err.message)
-      db.run(sql, (err) => {
-        if (err) console.log(err.message)
-        console.log('DONE')
-      })
-    })
+    db.run(
+      'CREATE TABLE IF NOT EXISTS user (id INTEGER PRIMARY KEY, name TEXT, email TEXT, password TEXT)',
+      (err) => {
+        if (err) console.error('Error creating table:', err.message)
+        db.run(sql, (err) => {
+          if (err) {
+            console.log(err.message)
+          } else {
+            console.log('Database created: Table: `user`')
+          }
+        })
+      }
+    )
   })
 }
 
 createDB(`
-  INSERT INTO user (name) VALUES
-      ('Michael Jackson'),
-      ('Ryan Florence'),
-      ('Brad Westfall'),
-      ('Cassidy Williams'),
-      ('Chance Strickland');
+  INSERT INTO user (name, email, password) VALUES
+      ('Michael Jackson', 'hello@reacttraining.com', 'abc123'),
+      ('Ryan Florence', 'fake@reacttraining.com', ''),
+      ('Brad Westfall', 'fake@reacttraining.com', ''),
+      ('Cassidy Williams', 'fake@reacttraining.com', ''),
+      ('Chance Strickland', 'fake@reacttraining.com', '');
 `)

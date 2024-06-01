@@ -1,5 +1,6 @@
 import express from 'express'
 import { getAuthUser } from './auth'
+// import './index.final'
 
 const app = express()
 const port = 3000
