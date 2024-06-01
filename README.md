@@ -27,6 +27,9 @@ If you need to verify that you have NVM installed: `nvm --version`. Then install
 # See this page for more install options: https://github.com/nvm-sh/nvm#usage
 $ nvm install node
 
+# This workshop was developed with Node v20 which is what we recommend
+# as of Spring 2024
+
 # lists out the versions of node that you're managing with nvm including
 # which one is the current one in your CLI
 $ nvm list
@@ -36,7 +39,7 @@ Verify you have Git, Node, and NPM installed. Installing Node will install NPM.
 
 ```sh
 $ git --version
-$ node --version
+$ node --version # Please be sure to use Node 20 if you can
 $ npm --version
 ```
 
