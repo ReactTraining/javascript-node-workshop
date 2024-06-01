@@ -1,0 +1,4 @@
+{
+  "watch": ["lessons"],
+  "ext": "ts,tsx,json,csv"
+}

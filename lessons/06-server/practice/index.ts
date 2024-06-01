@@ -1,5 +1,6 @@
 import express from 'express'
-import { db } from './db'
+import { query } from './db'
+// import './index.final'
 
 const app = express()
 const port = 3000

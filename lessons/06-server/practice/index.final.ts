@@ -1,5 +1,6 @@
 import express from 'express'
-import { db } from './db'
+import { query } from './db'
+
 const app = express()
 const port = 3000
 
@@ -8,7 +9,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', (req, res, next) => {
-  db.query('SELECT * FROM user')
+  query('SELECT * FROM user')
     .then((results) => {
       res.json(results)
     })
@@ -21,8 +22,8 @@ app.get('/users/:id', (req, res, next) => {
     next()
     return
   }
-  db.query(`SELECT * FROM user WHERE user.id = '${id}'`)
-    .then((results) => {
+  query(`SELECT * FROM user WHERE user.id = '${id}'`)
+    .then((results: any) => {
       if (results.length === 0) {
         next()
         return

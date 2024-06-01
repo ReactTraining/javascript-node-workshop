@@ -1,4 +1,4 @@
-// import './app.ts'
+// import './app'
 import * as http from 'http'
 
 const hostname = '127.0.0.1'

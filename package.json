@@ -2,27 +2,40 @@
   "name": "javascript-node-workshop",
   "private": true,
   "scripts": {
-    "/////////// NOTES: backslashes in --exec commands for Windows to work": "",
+    "postinstall": "node scripts/postinstall",
+    "db": "node scripts/createDB",
+    "/////////// NOTES: The escaped \" quotes in --exec commands for Windows to work": "",
     "/////////// LECTURES:": "",
     "lecture-1": "node lessons/01-js-and-node/lecture",
     "lecture-2": "ts-node lessons/02-promises/lecture/index.ts",
     "lecture-3": "",
     "lecture-4": "ts-node lessons/04-async-await/lecture/index.ts",
     "lecture-5": "ts-node lessons/05-cli/lecture/index.ts",
+    "lecture-6": "nodemon --exec \"ts-node lessons/06-server/lecture/index.ts\" || exit 0",
+    "lecture-7": "nodemon --exec \"ts-node lessons/07-middleware/lecture/index.ts\" || exit 0",
+    "lecture-8": "nodemon --exec \"ts-node lessons/08-authentication/lecture/index.ts\" || exit 0",
     "/////////// PRACTICES:": "",
     "practice-1": "node lessons/01-js-and-node/practice",
     "practice-2": "ts-node lessons/02-promises/practice/index.ts",
     "practice-3": "",
     "practice-4": "ts-node lessons/04-async-await/practice/index.ts",
-    "practice-5": "ts-node lessons/05-cli/practice/index.ts"
+    "practice-5": "ts-node lessons/05-cli/practice/index.ts",
+    "practice-6": "nodemon --exec \"ts-node lessons/06-server/practice/index.ts\"  || exit 0",
+    "practice-7": "nodemon --exec \"ts-node lessons/07-middleware/practice/index.ts\"  || exit 0",
+    "practice-8": "nodemon --exec \"ts-node lessons/08-authentication/practice/index.ts\"  || exit 0"
   },
   "dependencies": {
+    "express": "^4.19.2",
     "node-fetch": "^3.3.2",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.13.0",
     "@types/node-fetch": "^2.6.11",
     "@types/readline-sync": "^1.4.8",
+    "nodemon": "^3.1.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
