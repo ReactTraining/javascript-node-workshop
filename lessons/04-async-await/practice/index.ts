@@ -1,4 +1,4 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
 
 // Each practice below implements a main() function
 main()

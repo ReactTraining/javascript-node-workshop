@@ -1,10 +1,10 @@
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
 
-// Each exercise below implements a main() function
+// Each practice below implements a main() function
 main()
 
 /****************************************
-  Exercise: 1
+  Practice: 1
 *****************************************/
 
 function wait(ms: number) {
@@ -21,7 +21,7 @@ async function main() {
 }
 
 /****************************************
-  Exercise: 2
+  Practice: 2
 *****************************************/
 
 // Re-write all functions to use async/await
@@ -51,7 +51,7 @@ async function main() {
 // }
 
 /****************************************
-  Exercise: 3
+  Practice: 3
 *****************************************/
 
 // Your starting point here is actually the solution for the above exercise

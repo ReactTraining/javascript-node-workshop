@@ -8,7 +8,7 @@
     "/////////// LECTURES:": "",
     "lecture-1": "node lessons/01-js-and-node/lecture",
     "lecture-2": "ts-node lessons/02-promises/lecture/index.ts",
-    "lecture-3": "",
+    "lecture-3": "ts-node lessons/03-request-response/lecture/index.ts",
     "lecture-4": "ts-node lessons/04-async-await/lecture/index.ts",
     "lecture-5": "ts-node lessons/05-cli/lecture/index.ts",
     "lecture-6": "nodemon --exec \"ts-node lessons/06-server/lecture/index.ts\" || exit 0",

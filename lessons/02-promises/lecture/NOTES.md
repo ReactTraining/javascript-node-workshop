@@ -96,7 +96,7 @@ It would be good to mention that most the time we use promises, we're consumers 
 // 6.
 
 // Change the lesson to start
-import fetch from 'node-fetch'
+// import fetch from 'node-fetch'
 
 function getVehicle(url: string) {
   return fetch(url).then((response) => response.json())
