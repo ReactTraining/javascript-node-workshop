@@ -115,6 +115,9 @@ Fixes dependencies and transitive dependencies when they need to be updated from
   // The name of your project (must be lowercase and one word, or hyphenated)
   "name": "my-project",
 
+  // The type of module resolution to be used
+  "type": "commonjs", // or "module"
+
   // The version of your project (follow semantic versioning: MAJOR.MINOR.PATCH)
   "version": "1.0.0",
 
