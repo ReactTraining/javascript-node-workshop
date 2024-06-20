@@ -1,34 +1,35 @@
+import z from 'zod'
 // import { fakeFetch } from './utils'
 
 /****************************************
-  Part One: Request
+  Part 1: Request
 *****************************************/
 
-function getPersonVehicles(id: number) {
-  fetch(`https://swapi.dev/api/people/${id}`).then(() => {
-    console.log('Promise is resolved')
-  })
-}
+// function getPerson(id: number) {
+//   fetch(`https://swapi.dev/api/people/${id}`).then(() => {
+//     console.log('Promise is resolved')
+//   })
+// }
 
-getPersonVehicles(1)
+// getPerson(1)
 
 /****************************************
-  Part Two: Response
+  Part 2: Response
 *****************************************/
 
 // Docs: "[fetch] resolves to the Response object representing the response to your request."
 // https://developer.mozilla.org/en-US/docs/Web/API/fetch#return_value
 
-// function getPersonVehicles(id: number) {
-//   fetch(`https://swapi.dev/api/people/${id}`).then((stuff) => {
-//     console.log('What is this', stuff)
+// function getPerson(id: number) {
+//   fetch(`https://swapi.dev/api/people/${id}`).then((res) => {
+//     console.log('What is in the response', res)
 //   })
 // }
 
-// getPersonVehicles(1)
+// getPerson(1)
 
 /****************************************
-  Custom Fetch
+  Part 3: Custom Fetch
 *****************************************/
 
 // fakeFetch('fake-api')
@@ -36,3 +37,31 @@ getPersonVehicles(1)
 //   .then((data) => {
 //     console.log(data)
 //   })
+
+/****************************************
+  Part 4: Typesafe Network Response
+*****************************************/
+
+// const personSchema = z.object({
+//   name: z.string(),
+//   height: z.string().transform((val) => Number(val)),
+// })
+
+// type Person = z.infer<typeof personSchema>
+
+type Person = {
+  name: string
+  height: number
+}
+
+function getPerson(id: number) {
+  return fetch(`https://swapi.dev/api/people/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      return data as Person
+    })
+}
+
+getPerson(1).then((person) => {
+  console.log(person)
+})
