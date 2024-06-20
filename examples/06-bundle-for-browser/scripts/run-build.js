@@ -6,13 +6,17 @@ async function build() {
   await esbuild.build({
     entryPoints: ['app/index.js'],
     bundle: true,
-    outfile: 'build/build.js',
+    outdir: 'build',
     minify: true,
     sourcemap: true,
+    splitting: true,
+    format: 'esm',
   })
 
   await fsPromises.copyFile('app/index.html', 'build/index.html')
+  await fsPromises.copyFile('app/favicon.ico', 'build/favicon.ico')
 }
+
 build()
 
 const watcher = watch(['app/**/*'])

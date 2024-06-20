@@ -1,6 +1,5 @@
 {
   "name": "browser-modules",
-  "type": "module",
   "scripts": {
     "start": "http-server app -p 3000"
   },

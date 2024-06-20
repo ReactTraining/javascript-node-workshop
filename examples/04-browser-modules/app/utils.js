@@ -1,3 +1,2 @@
-export function sayHi() {
-  console.log("Let's bundle this code")
-}
+import { sayHi } from './sayHi.js'
+export { sayHi }
