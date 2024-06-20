@@ -116,4 +116,11 @@ getPersonVehicles(1)
   .then((allVehicles) => {
     console.log(allVehicles)
   })
+
+// ----------------
+// 7. Show database connection and wrapping callbacks in promises
+
+import { query } from './db'
+
+query('SELECT * FROM user').then((results) => {})
 ```
