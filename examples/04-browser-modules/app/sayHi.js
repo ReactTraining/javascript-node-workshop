@@ -1,3 +1,3 @@
 export function sayHi() {
-  console.log("Let's bundle this code")
+  console.log("Let's import this code")
 }

@@ -1,3 +1,7 @@
-const sayHi = require('./utils')
+// CommonJS
+// const sayHi = require('./utils')
 
-sayHi()
+// ESM
+import bar, { x, foo } from './utils.js'
+
+bar()

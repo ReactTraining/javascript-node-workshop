@@ -1,3 +1,3 @@
 export function other() {
-  console.log('other')
+  console.log('other...')
 }

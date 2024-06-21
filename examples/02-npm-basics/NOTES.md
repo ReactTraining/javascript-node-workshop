@@ -28,7 +28,7 @@ Topics:
 - Package-lock
 - SEMVER: 1.2.3 (Major.Minor.Patch)
 - Semver ranges: ^ (for minor) and ~ (for patch)
-  - `^1.0.0` in package.json means we're eligible to be using `1.1.0` in package-lock
+  - `^1.2.0` in package.json means we're eligible to be using `1.1.0` in package-lock
 - Installing specific versions: `npm install package@1.0`
 - Uninstalling via `npm uninstall <package>`
 

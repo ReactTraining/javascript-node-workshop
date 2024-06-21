@@ -1,11 +1,16 @@
 {
-  "name": "npm-basics",
+  "name": "02-npm-basics",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "",
+    "foo": ""
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^9.5.0"
+  }
 }
