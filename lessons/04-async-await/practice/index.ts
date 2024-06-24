@@ -15,11 +15,11 @@ main()
 
 // // Re-write main to use async/await
 
-// function main() {
-//   wait(1000).then(() => {
-//     console.log('Wait for one second')
-//   })
-// }
+function main() {
+  wait(1000).then(() => {
+    console.log('Wait for one second')
+  })
+}
 
 /****************************************
   Practice: 2

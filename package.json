@@ -20,7 +20,7 @@
     "practice-3": "",
     "practice-4": "ts-node lessons/04-async-await/practice/index.ts",
     "practice-5": "ts-node lessons/05-cli/practice/index.ts",
-    "practice-6": "nodemon --exec \"ts-node lessons/06-server/practice/index.ts\"  || exit 0",
+    "practice-6": "nodemon --exec \"ts-node lessons/06-server/practice/index.final.ts\"  || exit 0",
     "practice-7": "nodemon --exec \"ts-node lessons/07-middleware/practice/index.ts\"  || exit 0",
     "practice-8": "nodemon --exec \"ts-node lessons/08-authentication/practice/index.ts\"  || exit 0"
   },
@@ -28,6 +28,7 @@
     "cookie-parser": "^1.4.6",
     "cookies": "^0.9.1",
     "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",

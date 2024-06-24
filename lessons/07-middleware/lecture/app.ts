@@ -12,7 +12,7 @@ export const app = express()
 *****************************************/
 
 // Makes logs as requests come in
-app.use(logger('dev'))
+app.use(logger('common'))
 
 // Tells express to use a folder for static assets
 app.use(express.static(path.join(__dirname, 'public')))

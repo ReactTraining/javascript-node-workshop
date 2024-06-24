@@ -1,13 +1,15 @@
 import z from 'zod'
-// import { fakeFetch } from './utils'
+import { fakeFetch } from './utils'
 
 /****************************************
   Part 1: Request
 *****************************************/
 
 // function getPerson(id: number) {
-//   fetch(`https://swapi.dev/api/people/${id}`).then(() => {
-//     console.log('Promise is resolved')
+//   const req = new Request(`https://swapi.dev/api/people/${id}`)
+
+//   fetch(req).then((res) => {
+//     console.log(res)
 //   })
 // }
 
@@ -42,26 +44,25 @@ import z from 'zod'
   Part 4: Typesafe Network Response
 *****************************************/
 
-// const personSchema = z.object({
-//   name: z.string(),
-//   height: z.string().transform((val) => Number(val)),
-// })
+const personSchema = z.object({
+  name: z.string(),
+  height: z.string().transform((val) => Number(val)),
+})
 
-// type Person = z.infer<typeof personSchema>
-
-type Person = {
-  name: string
-  height: number
-}
+type Person = z.infer<typeof personSchema>
 
 function getPerson(id: number) {
   return fetch(`https://swapi.dev/api/people/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      return data as Person
+      const parsedResponse = personSchema.safeParse(data)
+      if (parsedResponse.success) {
+        return parsedResponse.data
+      } else {
+      }
     })
 }
 
-getPerson(1).then((person) => {
-  console.log(person)
-})
+getPerson(1)
+  .then((data) => {})
+  .catch()
