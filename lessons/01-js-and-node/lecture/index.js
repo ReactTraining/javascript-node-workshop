@@ -36,6 +36,9 @@ console.log("let's get started")
 
 // require('dotenv').config()
 // console.log(process.env.SECRET) // from .env
+
+// // Community standard
+// // "lecture-1": "NODE_ENV=development node lessons/01-js-and-node/lecture",
 // console.log(process.env.NODE_ENV)
 
 /**
