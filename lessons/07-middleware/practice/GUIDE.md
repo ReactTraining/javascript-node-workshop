@@ -59,7 +59,7 @@ We could have done `app.get('*', fn)` which would match all paths, but only the 
 
 You can also do an _à la carte_ approach:
 
-Let's say you couldn't just draw a line in the middle of your routes and say "all that are before are open and all that are after need to be authenticated". What if the `/users` path had some things that were authenticated and some that were not:
+Let's say you don't want to divide your routes and say "all that are before are open and all that are after need to be authenticated". What if the `/users` path had some methods that are authenticated and some that are not:
 
 ```ts
 app.get('/users', fn)
@@ -67,7 +67,7 @@ app.post('/users', private('admin'), fn) // <-- after the path, have any number 
 app.delete('/users', fn)
 ```
 
-Think of things like `app.get` or `app.get` as being a way to register one or more middleware to a path. All middleware passed in needs to be a function with this signature:
+Using `app.get` and `app.post` (or similar HTTP verbs) are ways to register one or more middleware to a path. All middleware passed in needs to be a function with this signature:
 
 ```js
 function middleware(req, res, next) {}
