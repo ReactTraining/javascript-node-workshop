@@ -1,3 +1,4 @@
-const sayHi = require('./utils')
+//const sayHi = require('./utils')
+import { foo } from './utils.js'
 
-sayHi()
+foo()

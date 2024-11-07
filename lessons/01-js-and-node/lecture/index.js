@@ -1,95 +1,38 @@
-console.log("let's get started")
+// const products = [
+//   { id: 1, name: 'foo' },
+//   { id: 2, name: 'foofds' },
+//   { id: 3, name: 'foofdsfds' },
+// ]
 
-/**
- * Intro
- */
+// const ids = [1, 3]
 
-// EcmaScript, JavaScript, Node
+// const cart = ids.reduce((collection, id) => {
+//   const found = products.find((item) => item.id === id)
+//   collection.push(found)
+//   return collection
+// }, [])
 
-/**
- * Versions
- */
-
-// Node Versions
-// https://nodejs.dev/en/about/releases/
-
-/**
- * Globals
- */
-
-// https://nodejs.org/docs/latest/api/globals.html
-// console.log(process.versions)
-// console.log('process.cwd():', process.cwd())
-// console.log('__dirname:', __dirname)
-// console.log('__filename:', __filename)
-
-/**
- * Modules
- */
-
-// CommonJS
-// ESModules
-
-/**
- * Env
- */
-
-// require('dotenv').config()
-// console.log(process.env.SECRET) // from .env
-
-// // Community standard
-// // "lecture-1": "NODE_ENV=development node lessons/01-js-and-node/lecture",
-// console.log(process.env.NODE_ENV)
-
-/**
- * Scope
- */
-
-// var x = [5, 6, 7]
-// function scope() {
-//   for (var i = 0; i < x.length; i++) {
-//     var item = x[i]
-//     console.log(item)
-//   }
-
-//   console.log(i)
-//   console.log(item)
-// }
-// scope()
-
-/**
- * Object and Array Literals
- */
-
-/**
- * Function Types
- */
-
-/**
- * Expressions and Expression Chaining
- */
-
-/**
- * Map, Filter, Reduce, Find, Includes
- */
+// console.log(cart)
 
 /**
  * File System
  */
 
-// const fs = require('fs')
-// const path = require('path')
-// const dataPath = path.join(__dirname, `data.csv`)
-// const data = fs.readFileSync(dataPath, 'utf8')
+const fs = require('fs')
+const path = require('path')
+const dataPath = path.join(__dirname, `data.csv`)
+const data = fs.readFileSync(dataPath, 'utf8')
 
-// let json = data
-//   .split('\n')
-//   .map((item) => {
-//     const [id, name] = item.split(',')
-//     return `{ "id": ${id}, "name": "${name}" }`
-//   })
-//   .join(',\n')
+let json = data
+  .split('\n') // string to array
+  .filter(Boolean)
+  .map((item) => {
+    const [x, y] = item.split(',') // item: '1, M' -> [1, ' M']
+    return `{ "id": ${x}, "name": "${y.trim()}" }`
+  })
+  .join(',\n') // array to string
 
-// json = `{ "users": [${json}] }`
+json = `{ "users": [${json}] }` // well formed json
 
-// console.log(JSON.parse(json))
+const dataset = JSON.parse(json)
+console.log(dataset.users[2])

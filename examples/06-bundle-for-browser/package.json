@@ -3,7 +3,6 @@
   "type": "module",
   "scripts": {
     "// Can't run two things in parallel": "",
-    "dev-bad": "npm run dev:build && npm run dev:server",
     "dev:build": "node scripts/run-build.js",
     "dev:server": "http-server build -p 3000",
     "// Explain run-p, aka npm-run-all --parallel": "",
