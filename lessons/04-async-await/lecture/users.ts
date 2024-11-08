@@ -19,7 +19,12 @@ export function addAccountUser(accountId: number, user: User): Promise<DBUser> {
 }
 
 export function emailUser(user: DBUser) {
-  return Promise.resolve()
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('email did work')
+      resolve('')
+    }, 1000)
+  })
 }
 
 export function logNewUserStats(accountId: number) {

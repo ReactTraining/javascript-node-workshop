@@ -1,4 +1,4 @@
-import { app } from './app'
+import { app } from './app' // this is express
 import * as http from 'http'
 
 const port = process.env.PORT || '3000'

@@ -1,11 +1,12 @@
 import z from 'zod'
-// import { fakeFetch } from './utils'
+import { fakeFetch } from './utils'
 
 /****************************************
   Part 1: Request
 *****************************************/
 
 // function getPerson(id: number) {
+
 //   fetch(`https://swapi.dev/api/people/${id}`).then(() => {
 //     console.log('Promise is resolved')
 //   })
@@ -17,8 +18,8 @@ import z from 'zod'
   Part 2: Response
 *****************************************/
 
-// Docs: "[fetch] resolves to the Response object representing the response to your request."
-// https://developer.mozilla.org/en-US/docs/Web/API/fetch#return_value
+// // Docs: "[fetch] resolves to the Response object representing the response to your request."
+// // https://developer.mozilla.org/en-US/docs/Web/API/fetch#return_value
 
 // function getPerson(id: number) {
 //   fetch(`https://swapi.dev/api/people/${id}`).then((res) => {
@@ -32,7 +33,7 @@ import z from 'zod'
   Part 3: Custom Fetch
 *****************************************/
 
-// fakeFetch('fake-api')
+// fakeFetch('fakesdfsfdsfds-api')
 //   .then((res) => res.json())
 //   .then((data) => {
 //     console.log(data)
@@ -42,26 +43,33 @@ import z from 'zod'
   Part 4: Typesafe Network Response
 *****************************************/
 
-// const personSchema = z.object({
-//   name: z.string(),
-//   height: z.string().transform((val) => Number(val)),
-// })
+const personSchema = z.object({
+  name: z.string(),
+  height: z.string().transform((val) => Number(val)),
+})
 
-// type Person = z.infer<typeof personSchema>
-
-type Person = {
-  name: string
-  height: number
-}
+type Person = z.infer<typeof personSchema>
 
 function getPerson(id: number) {
   return fetch(`https://swapi.dev/api/people/${id}`)
     .then((res) => res.json())
     .then((data) => {
-      return data as Person
+      const results = personSchema.safeParse(data)
+
+      if (results.success) {
+        const data = results.data
+        return data
+      } else {
+        // alert developers that the other system changed their types
+        throw 'bad data'
+      }
     })
 }
 
-getPerson(1).then((person) => {
-  console.log(person)
-})
+getPerson(1)
+  .then((person) => {
+    console.log(person, typeof person.height)
+  })
+  .catch((err) => {
+    console.log(err)
+  })

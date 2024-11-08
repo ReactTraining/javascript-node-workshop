@@ -10,8 +10,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/users', (req, res, next) => {
-  // db.query('SELECT * FROM user')
-  res.json({})
+  query('SELECT * FROM user').then((users) => {
+    res.json(users)
+  })
 })
 
 app.get('/users/:id', (req, res, next) => {

@@ -1,26 +1,44 @@
-// import './index.final'
 import fs from 'fs'
 import path from 'path'
 import readlineSync from 'readline-sync'
 
-// Get the lessonType and lessonFiles by allowing the user to select
-// from a CLI menu. Use the console.logs at the bottom of this page
-// to show you got the right result.
-
+const BACK = '<--------- Back'
 let selectedLesson = ''
 let lessonType = ''
 let lessonFiles: string[] = []
 
-const lessonsPath = path.resolve(__dirname /* 🔴 FINISH THIS - SEE README */)
+const lessonsPath = path.resolve(__dirname, '..', '..')
 const lessonFolders = fs.readdirSync(lessonsPath).filter((item) => {
   return fs.lstatSync(path.resolve(lessonsPath, item)).isDirectory()
 })
 
 let menuOptions = lessonFolders
 let choice = readlineSync.keyInSelect(menuOptions)
+if (choice === -1) {
+  process.exit(0)
+}
 
 selectedLesson = lessonFolders[choice]
-console.log(selectedLesson)
 
-// console.log(lessonType) // example: 'exercise'
-// console.log(lessonFile) // example: ['index.ts', 'README.md']
+const selectedLessonPath = path.resolve(lessonsPath, selectedLesson)
+const lessonTypeFolders = fs.readdirSync(selectedLessonPath).filter((item) => {
+  return fs.lstatSync(path.resolve(selectedLessonPath, item)).isDirectory()
+})
+
+menuOptions = [...lessonTypeFolders, BACK]
+choice = readlineSync.keyInSelect(menuOptions)
+
+console.log(choice)
+
+// if (choice === -1) {
+//   process.exit(0)
+// } else if (menuOptions[choice] === BACK) {
+//   selectedLesson = ''
+// } else if (menuOptions[choice]) {
+//   lessonType = menuOptions[choice]
+// }
+
+// const lessonFilesPath = path.resolve(selectedLessonPath, lessonType)
+// lessonFiles = fs.readdirSync(lessonFilesPath)
+
+// console.log(lessonFiles)

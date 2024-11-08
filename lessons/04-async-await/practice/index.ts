@@ -15,10 +15,9 @@ main()
 
 // // Re-write main to use async/await
 
-// function main() {
-//   wait(1000).then(() => {
-//     console.log('Wait for one second')
-//   })
+// async function main() {
+//   await wait(1000)
+//   console.log('Wait for one second')
 // }
 
 /****************************************
@@ -27,27 +26,27 @@ main()
 
 // Re-write all functions to use async/await
 
-// function getVehicle(url: string) {
-//   return fetch(url).then((response) => response.json())
-// }
+async function getVehicle(url: string) {
+  return await fetch(url).then((response) => response.json())
+}
 
-// function getPersonVehicles(id: number): Promise<string[]> {
-//   return fetch(`https://swapi.dev/api/people/${id}`)
-//     .then((response) => response.json() as Record<string, any>)
-//     .then((person) => person.vehicles)
-// }
+function getPersonVehicles(id: number): Promise<string[]> {
+  return fetch(`https://swapi.dev/api/people/${id}`)
+    .then((response) => response.json() as Record<string, any>)
+    .then((person) => person.vehicles)
+}
 
-// function main() {
-//   getPersonVehicles(1)
-//     .then((vehicles) => {
-//       const promiseArray = vehicles.map((url) => getVehicle(url))
-//       return Promise.all(promiseArray)
-//     })
-//     .then((allVehicles) => {
-//       console.log('---')
-//       console.log(allVehicles)
-//     })
-// }
+function main() {
+  getPersonVehicles(1).then((vehicles) => {
+    console.log(vehicles)
+    const promiseArray = vehicles.map((url) => getVehicle(url))
+    return Promise.all(promiseArray)
+  })
+  // .then((allVehicles) => {
+  //   console.log('---')
+  //   console.log(allVehicles)
+  // })
+}
 
 /****************************************
   Practice: 3
