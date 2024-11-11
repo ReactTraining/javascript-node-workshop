@@ -51,15 +51,15 @@ Then **clone**, **install**, and **run** the app:
 
 ```sh
 # Clone the repo to your local machine (This just clones, it does not "install")
-$ git clone https://github.com/ReactTraining/node-workshop.git
+$ git clone https://github.com/ReactTraining/javascript-node-workshop.git
 
 # Whichever directory you run the above command from, that directory should
-# now have a folder called `node-workshop`.
+# now have a folder called `javascript-node-workshop`.
 
-# Change directory to the `node-workshop` folder:
-$ cd node-workshop
+# Change directory to the `javascript-node-workshop` folder:
+$ cd javascript-node-workshop
 
-# Install and run. Make sure you do these two commands from within the `node-workshop` folder:
+# Install and run. Make sure you do these two commands from within the `javascript-node-workshop` folder:
 $ npm install
 $ npm start
 

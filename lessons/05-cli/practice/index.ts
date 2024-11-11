@@ -11,7 +11,7 @@ let selectedLesson = ''
 let lessonType = ''
 let lessonFiles: string[] = []
 
-const lessonsPath = path.resolve(__dirname /* 🔴 FINISH THIS - SEE README */)
+const lessonsPath = path.resolve(__dirname /* 🔴 FINISH THIS - SEE GUIDE.md */)
 const lessonFolders = fs.readdirSync(lessonsPath).filter((item) => {
   return fs.lstatSync(path.resolve(lessonsPath, item)).isDirectory()
 })

@@ -7,7 +7,7 @@
   - MDN is the official documentation for JS?
   - NVM
   - How version numbers work
-  - Now NPM and package.json works
+  - How NPM and package.json works
   - package.json scripts
   - Modules (CommonJS vs ESM)
 - ✅ Scope
