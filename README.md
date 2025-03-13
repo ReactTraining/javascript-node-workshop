@@ -6,9 +6,9 @@ Before attending the training, please make sure you install the code (not just c
 
 - [ ] Bring a laptop (don't forget a long power cord).
 - [ ] Install and run this code. If doing `npm start` after installing shows a welcome message, you're all set.
-- [ ] [Become familiar with basic Node and NPM CLI ahead of time](./cli.md)
+- [ ] [Become familiar with JavaScrip's Event Loop](https://www.youtube.com/watch?v=eiC58R16hb8)
 - [ ] [Learn the JavaScript syntax that matters the most to React](https://reacttraining.com/blog/javascript-the-react-parts/). Even though this is a "Node" workshop, all the material in that article still applies since it's trying to bring you up to speed with modern JS syntax.
-- [ ] WAIT! Does your company or computer use a VPN or any sort of proxy? That might cause some issues. Someome on your team probably knows how to get around the issues. We can't really help out because the issues surrounding VPN's and Proxies are so diverse and out of our control.
+- [ ] WAIT! Does your company or computer use a VPN or any sort of proxy? That might cause some issues. Someone on your team probably knows how to get around the issues. We can't really help out because the issues surrounding VPN's and Proxies are so diverse and out of our control.
 
 ## Install Git, Node, and NPM
 
