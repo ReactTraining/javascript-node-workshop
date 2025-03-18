@@ -1,4 +1,4 @@
-// import { User, createAccount, addAccountUser } from './users'
+import { User, createAccount, addAccountUser, emailUser, logNewUserStats } from './users'
 
 /****************************************
   Part 1
@@ -29,15 +29,10 @@
   Part 2
 *****************************************/
 
-function signup(user: User) {
-  return createAccount()
-    .then((account) => {
-      return addAccountUser(account.accountId, user)
-    })
-    .then((user) => {
-      // emailUser(user)
-      // logNewUserStats(account.accountId)
-    })
+async function signup(userInput: User) {
+  const account = await createAccount()
+  const user = await addAccountUser(account.accountId, userInput)
+  await Promise.allSettled([emailUser(user), logNewUserStats(account.accountId)])
 }
 
 signup({ name: 'brad' }).then(() => {
