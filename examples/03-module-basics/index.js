@@ -1,3 +1,7 @@
-const sayHi = require('./utils')
+// CommonJS
+//const sayHi = require('./utils')
 
-sayHi()
+// ESM (EcmaScript Modules)
+import Here from './utils.js'
+
+Here()

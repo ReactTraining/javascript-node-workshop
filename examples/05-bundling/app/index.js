@@ -1,3 +1,3 @@
-import { sayHi } from './utils.js'
+import { sayHi } from './utils.js';
 
-sayHi()
+sayHi();
