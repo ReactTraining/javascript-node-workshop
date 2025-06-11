@@ -37,3 +37,7 @@ nvm install 20
 ```
 
 Also explain how NVM defaults work
+
+```sh
+nvm alias default 22
+```
