@@ -96,14 +96,15 @@ It would be good to mention that most the time we use promises, we're consumers 
 // 6.
 
 // Change the lesson to start
-// import fetch from 'node-fetch'
+const API = 'http://localhost:3333'
+// const API = 'http://swapi.dev/api'
 
 function getVehicle(url: string) {
   return fetch(url).then((response) => response.json())
 }
 
 function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`https://swapi.dev/api/people/${id}`)
+  return fetch(`${API}/people/${id}`)
     .then((response) => response.json() as Record<string, any>)
     .then((data) => data.vehicles)
 }

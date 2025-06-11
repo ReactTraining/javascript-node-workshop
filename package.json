@@ -2,8 +2,10 @@
   "name": "javascript-node-workshop",
   "private": true,
   "scripts": {
+    "start": "node scripts/start",
     "postinstall": "node scripts/postinstall",
     "db": "node scripts/createDB",
+    "swapi": "npx json-server -p 3333 swapi.json",
     "/////////// NOTES: The escaped \" quotes in --exec commands for Windows to work": "",
     "/////////// LECTURES:": "",
     "lecture-1": "node lessons/01-js-and-node/lecture",
@@ -31,7 +33,6 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "morgan": "^1.10.0",
-    "node-fetch": "^3.3.2",
     "readline-sync": "^1.4.10",
     "sqlite3": "^5.1.7",
     "zod": "^3.23.8"
@@ -39,7 +40,6 @@
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.13.0",
-    "@types/node-fetch": "^2.6.11",
     "@types/readline-sync": "^1.4.8",
     "nodemon": "^3.1.2",
     "ts-node": "^10.9.2",

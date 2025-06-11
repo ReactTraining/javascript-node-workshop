@@ -1,5 +1,8 @@
 // import { User, createAccount, addAccountUser } from './users'
 
+const API = 'http://localhost:3333'
+// const API = 'http://swapi.dev/api'
+
 /****************************************
   Part 1
 *****************************************/
@@ -9,7 +12,7 @@ function getVehicle(url: string) {
 }
 
 function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`https://swapi.dev/api/people/${id}`)
+  return fetch(`${API}/people/${id}`)
     .then((response) => response.json() as Record<string, any>)
     .then((data) => data.vehicles)
 }

@@ -1,4 +1,5 @@
-// import fetch from 'node-fetch'
+const API = 'http://localhost:3333'
+// const API = 'http://swapi.dev/api'
 
 // Each practice below implements a main() function
 main()
@@ -33,11 +34,11 @@ async function main() {
 // }
 
 // async function getPersonVehicles(id: number): Promise<string[]> {
-//   const response = await fetch(`https://swapi.dev/api/people/${id}`)
+//   const response = await fetch(`${API}/people/${id}`)
 //   const person = await response.json() as Record<string, any>
 
 //   // The above could also be written as
-//   // const person = await fetch(`https://swapi.dev/api/people/${id}`).then((response) => response.json())
+//   // const person = await fetch(`${API}/people/${id}`).then((response) => response.json())
 
 //   return person.vehicles
 // }
@@ -62,7 +63,7 @@ async function main() {
 // Promise.all for Promise.allSettled to see how that changes things
 
 // async function getVehicle(url: string) {
-//   if (url === 'https://swapi.dev/api/vehicles/30/') {
+//   if (url === '${API}/vehicles/30/') {
 //     return Promise.reject('404: Not Found')
 //   } else {
 //     const response = await fetch(url)
@@ -72,7 +73,7 @@ async function main() {
 // }
 
 // async function getPersonVehicles(id: number): Promise<string[]> {
-//   const person = await fetch(`https://swapi.dev/api/people/${id}`).then((response) =>
+//   const person = await fetch(`${API}/people/${id}`).then((response) =>
 //     response.json()
 //   )  as Record<string, any>
 //   return person.vehicles
