@@ -1,6 +1,6 @@
 {
   "name": "bundling",
-  "type": "module",
+  "// type": "module",
   "scripts": {
     "build": "esbuild app/index.js --bundle --outfile=build/build.js"
   },

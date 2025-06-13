@@ -1,20 +1,30 @@
 // import z from 'zod'
-// import { fakeFetch } from './utils'
 
 const API = 'http://localhost:3333'
 // const API = 'http://swapi.dev/api'
 
 /****************************************
-  Part 1: Request
+ Part 1: Request
 *****************************************/
 
-function getPerson(id: number) {
-  fetch(`${API}/people/${id}`).then(() => {
-    console.log('Promise is resolved')
-  })
-}
+const response = new Response('{ "name": "John" }', {
+  status: 200,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
 
-getPerson(1)
+response.json().then((data) => {
+  console.log(data)
+})
+
+// function getPerson(id: number) {
+//   fetch(`${API}/people/${id}`).then(() => {
+//     console.log('Promise is resolved')
+//   })
+// }
+
+// getPerson(1)
 
 /****************************************
   Part 2: Response
@@ -30,16 +40,6 @@ getPerson(1)
 // }
 
 // getPerson(1)
-
-/****************************************
-  Part 3: Custom Fetch
-*****************************************/
-
-// fakeFetch('fake-api')
-//   .then((res) => res.json())
-//   .then((data) => {
-//     console.log(data)
-//   })
 
 /****************************************
   Part 4: Typesafe Network Response

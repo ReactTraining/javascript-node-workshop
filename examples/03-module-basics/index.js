@@ -1,3 +1,3 @@
-const sayHi = require('./utils')
+import * as SomeWord from './utils.js'
 
-sayHi()
+SomeWord.bar()

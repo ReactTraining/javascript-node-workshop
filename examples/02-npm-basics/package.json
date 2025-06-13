@@ -1,11 +1,14 @@
 {
   "name": "npm-basics",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node index.js"
   },
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "react": "^19.1.0"
+  },
+  "devDependencies": {
+    "react-testing-library": "^8.0.1"
+  }
 }
