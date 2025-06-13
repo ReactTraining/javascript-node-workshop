@@ -13,7 +13,9 @@ app.get('/users', (req, res, next) => {
     .then((results) => {
       res.json(results)
     })
-    .catch(next)
+    .catch((error) => {
+      next(error)
+    })
 })
 
 app.get('/users/:id', (req, res, next) => {

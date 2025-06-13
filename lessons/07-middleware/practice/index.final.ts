@@ -6,21 +6,20 @@ const port = 3000
 
 class NotAuthorized extends Error {}
 
-app.get('/account', (req, res, next) => {
+function isAuthenticated(req, res, next) {
   const authUser = getAuthUser()
-  if (authUser) {
-    req.user = authUser
-    next()
-  } else {
+  if (!authUser) {
     throw new NotAuthorized()
   }
-})
+  req.user = authUser
+  next()
+}
 
 app.get('/', (req, res) => {
   res.send('<h1>Express Home<h1>')
 })
 
-app.get('/account', (req, res) => {
+app.get('/account', isAuthenticated, (req, res) => {
   res.send(`<h1>Hello ${req.user && req.user.name}, you are logged in<h1>`)
 })
 

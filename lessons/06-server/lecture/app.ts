@@ -2,8 +2,9 @@ import express from 'express'
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('<h1>Express Home<h1>')
+app.get('/', (req, res, next) => {
+  next()
+  res.send('<h1>Home One<h1>')
 })
 
 app.get('/users', (req, res) => {
@@ -14,7 +15,7 @@ app.use((req, res) => {
   res.status(404).send('<h1>Not Found</h1>')
 })
 
-app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).send('Server Error')
 })

@@ -12,7 +12,7 @@ export const app = express()
 *****************************************/
 
 // Makes logs as requests come in
-app.use(logger('dev'))
+app.use(logger('combined'))
 
 // Tells express to use a folder for static assets
 app.use(express.static(path.join(__dirname, 'public')))
@@ -43,16 +43,10 @@ app.use(express.json())
 *****************************************/
 
 const router = express.Router()
+
 app.use('/api', router)
 
-router.get('/users', (req, res) => {
-  res.json([
-    { id: 1, name: 'Michael Jackson' },
-    { id: 2, name: 'Ryan Florence' },
-    { id: 3, name: 'Brad Westfall' },
-    { id: 4, name: 'Chance Stickland' },
-  ])
-})
+router.get('/users', (req, res) => {})
 
 app.use((req, res) => {
   res.status(404).send('<h1>Not Found</h1>')

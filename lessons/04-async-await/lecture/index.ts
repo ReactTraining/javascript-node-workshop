@@ -1,48 +1,61 @@
-// import { User, createAccount, addAccountUser } from './users'
+import { User, createAccount, addAccountUser, emailUser, logNewUserStats } from './users'
 
-const API = 'http://localhost:3333'
+// const API = 'http://localhost:3333'
 // const API = 'http://swapi.dev/api'
 
 /****************************************
   Part 1
 *****************************************/
 
-function getVehicle(url: string) {
-  return fetch(url).then((response) => response.json())
-}
+// async function getVehicle(url: string) {
+//   try {
+//     const response = await fetch(url)
+//     return await response.json()
+//   } catch (error) {
+//     console.error('Error fetching vehicle:', error)
+//     throw error
+//   }
+// }
 
-function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`${API}/people/${id}`)
-    .then((response) => response.json() as Record<string, any>)
-    .then((data) => data.vehicles)
-}
+// async function getPersonVehicles(id: number) {
+//   try {
+//     const response = await fetch(`${API}/people/${id}`)
+//     const data = (await response.json()) as Record<string, any> // 0.5
 
-getPersonVehicles(1)
-  .then((vehicles) => {
-    const p = vehicles.map((url) => getVehicle(url))
-    return Promise.all(p)
-  })
-  .then((allVehicles) => {
-    console.log(allVehicles)
-  })
+//     // A fn that is `async`: whatever it returns is the resolve value
+//     return data.vehicles
+//   } catch (error) {
+//     console.error('Error fetching person vehicles:', error)
+//     throw error
+//   }
+// }
+
+// async function start() {
+//   try {
+//     const vehicles = await getPersonVehicles(1)
+//     const promiseArray = vehicles.map((url) => getVehicle(url))
+//     const x = await Promise.all(promiseArray)
+
+//     console.log(x)
+//   } catch (error) {
+//     console.error('Error in start function:', error)
+//   }
+// }
+
+// start()
 
 /****************************************
   Part 2
 *****************************************/
 
-// function signup(user: User) {
-//   return createAccount()
-//     .then((account) => {
-//       return addAccountUser(account.accountId, user)
-//     })
-//     .then((user) => {
-//       // emailUser(user)
-//       // logNewUserStats(account.accountId)
-//     })
-// }
+async function signup(user: User) {
+  const account = await createAccount()
+  const dbUser = await addAccountUser(account.accountId, user)
+  await Promise.all([emailUser(dbUser), logNewUserStats(account.accountId)])
+}
 
-// signup({ name: 'brad' }).then(() => {
-//   console.log('✅ User Added')
-// })
+signup({ name: 'brad' }).then(() => {
+  console.log('✅ User Added')
+})
 
-// // Remember "top-level" await
+// Remember "top-level" await

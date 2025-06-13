@@ -20,9 +20,9 @@
     "practice-1": "node lessons/01-js-and-node/practice",
     "practice-2": "ts-node lessons/02-promises/practice/index.ts",
     "practice-3": "",
-    "practice-4": "ts-node lessons/04-async-await/practice/index.ts",
+    "practice-4": "ts-node lessons/04-async-await/practice/index.final.ts",
     "practice-5": "ts-node lessons/05-cli/practice/index.ts",
-    "practice-6": "nodemon --exec \"ts-node lessons/06-server/practice/index.ts\"  || exit 0",
+    "practice-6": "nodemon --exec \"ts-node lessons/06-server/practice/index.final.ts\"  || exit 0",
     "practice-7": "nodemon --exec \"ts-node lessons/07-middleware/practice/index.ts\"  || exit 0",
     "practice-8": "nodemon --exec \"ts-node lessons/08-authentication/practice/index.ts\"  || exit 0"
   },

@@ -8,19 +8,19 @@ main()
   Practice: 1
 *****************************************/
 
-// function wait(ms: number) {
-//   return new Promise((resolve) => {
-//     setTimeout(resolve, ms)
-//   })
-// }
+function wait(ms: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, ms)
+  })
+}
 
-// // Re-write main to use async/await
+// Re-write main to use async/await
 
-// function main() {
-//   wait(1000).then(() => {
-//     console.log('Wait for one second')
-//   })
-// }
+function main() {
+  wait(1000).then(() => {
+    console.log('Wait for one second')
+  })
+}
 
 /****************************************
   Practice: 2

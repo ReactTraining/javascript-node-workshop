@@ -11,6 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/users', (req, res, next) => {
   // query('SELECT * FROM user')
+
   res.json({})
 })
 
