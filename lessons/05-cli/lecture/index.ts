@@ -4,10 +4,10 @@ import readlineSync from 'readline-sync'
 
 let selectedLesson
 
-const lessonsPath = path.resolve(__dirname, 'my-lessons')
+const lessonsPath = path.join(__dirname, 'my-lessons')
 
 const lessonFolders = fs.readdirSync(lessonsPath).filter((item) => {
-  return fs.lstatSync(path.resolve(lessonsPath, item)).isDirectory()
+  return fs.lstatSync(path.join(lessonsPath, item)).isDirectory()
 })
 
 const choice = readlineSync.keyInSelect(lessonFolders)
