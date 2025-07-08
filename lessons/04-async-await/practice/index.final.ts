@@ -63,7 +63,7 @@ async function main() {
 // Promise.all for Promise.allSettled to see how that changes things
 
 // async function getVehicle(url: string) {
-//   if (url === '${API}/vehicles/30/') {
+//   if (url === `${API}/vehicles/30/`) {
 //     return Promise.reject('404: Not Found')
 //   } else {
 //     const response = await fetch(url)
