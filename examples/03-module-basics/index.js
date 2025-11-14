@@ -1,3 +1,3 @@
-const sayHi = require('./utils')
+import * as stuff from './utils'
 
-sayHi()
+stuff.sayHi()

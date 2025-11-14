@@ -8,13 +8,13 @@ const API = 'http://localhost:3333'
   Part 1: Request
 *****************************************/
 
-function getPerson(id: number) {
-  fetch(`${API}/people/${id}`).then(() => {
-    console.log('Promise is resolved')
-  })
-}
+// function getPerson(id: number) {
+//   fetch(`${API}/people/${id}`).then((response) => {
+//     console.log('Promise is resolved')
+//   })
+// }
 
-getPerson(1)
+// getPerson(1)
 
 /****************************************
   Part 2: Response

@@ -7,24 +7,31 @@ const API = 'http://localhost:3333'
   Part 1
 *****************************************/
 
-function getVehicle(url: string) {
-  return fetch(url).then((response) => response.json())
+// async function getVehicle(url: string) {
+//   const data = await fetch(url).then(res => res.json())
+//   return data
+// }
+
+async function getVehicle(url: string) {
+  const res = await fetch(url) // 2s <----
+  const data = await res.json() // 0.000001
+  return data
 }
 
-function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`${API}/people/${id}`)
-    .then((response) => response.json() as Record<string, any>)
-    .then((data) => data.vehicles)
+async function getPersonVehicles(id: number): Promise<string[]> {
+  const response = await fetch(`${API}/people/${id}`)
+  const data = (await response.json()) as Record<string, any>
+  return data.vehicles
 }
 
-getPersonVehicles(1)
-  .then((vehicles) => {
-    const p = vehicles.map((url) => getVehicle(url))
-    return Promise.all(p)
-  })
-  .then((allVehicles) => {
-    console.log(allVehicles)
-  })
+async function main2() {
+  const vehicles = await getPersonVehicles(1)
+  const p = vehicles.map((url) => getVehicle(url))
+  const allVehicles = await Promise.all(p)
+  console.log(allVehicles)
+}
+
+main2()
 
 /****************************************
   Part 2

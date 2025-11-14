@@ -1,3 +1,8 @@
 function App() {
-  return <div>React's JSX compiles to a function call</div>
+  function foo() {
+    const message = 'Hello College Board'
+    return message
+  }
+
+  return <div id="foo">{foo()}</div>
 }
