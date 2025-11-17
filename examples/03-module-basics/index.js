@@ -1,3 +1,4 @@
-const sayHi = require('./utils')
+// ESModules
+import * as Any from './utils.js'
 
-sayHi()
+Any.sayHi()

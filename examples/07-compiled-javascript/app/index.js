@@ -1,3 +1,10 @@
 function App() {
-  return <div>React's JSX compiles to a function call</div>
+  return (
+    <div>
+      <h1>My Heading</h1>
+      <span>
+        Hello world <a href="/">Link</a>
+      </span>
+    </div>
+  )
 }

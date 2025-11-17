@@ -1,48 +1,44 @@
-// import { User, createAccount, addAccountUser } from './users'
+import { User, createAccount, addAccountUser, emailUser, logNewUserStats } from './users'
 
-const API = 'http://localhost:3333'
+// const API = 'http://localhost:3333'
 // const API = 'http://swapi.dev/api'
 
 /****************************************
   Part 1
 *****************************************/
 
-function getVehicle(url: string) {
-  return fetch(url).then((response) => response.json())
-}
+// async function getVehicle(url: string) {
+//   const data = await fetch(url).then((response) => response.json())
+//   return data
+// }
 
-function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`${API}/people/${id}`)
-    .then((response) => response.json() as Record<string, any>)
-    .then((data) => data.vehicles)
-}
+// async function getPersonVehicles(id: number): Promise<string[]> {
+//   const response = await fetch(`${API}/people/${id}`)
+//   const data = (await response.json()) as Record<string, any>
+//   return data.vehicles
+// }
 
-getPersonVehicles(1)
-  .then((vehicles) => {
-    const p = vehicles.map((url) => getVehicle(url))
-    return Promise.all(p)
-  })
-  .then((allVehicles) => {
-    console.log(allVehicles)
-  })
+// async function main2() {
+//   const vehicles = await getPersonVehicles(1)
+
+//   const promises = vehicles.map((url) => getVehicle(url))
+//   const allVehicles = await Promise.all(promises)
+//   console.log(allVehicles)
+// }
+
+// main2()
 
 /****************************************
   Part 2
 *****************************************/
 
-// function signup(user: User) {
-//   return createAccount()
-//     .then((account) => {
-//       return addAccountUser(account.accountId, user)
-//     })
-//     .then((user) => {
-//       // emailUser(user)
-//       // logNewUserStats(account.accountId)
-//     })
-// }
+async function signup(user: User) {
+  const account = await createAccount()
+  const dbUser = await addAccountUser(account.accountId, user)
 
-// signup({ name: 'brad' }).then(() => {
-//   console.log('✅ User Added')
-// })
+  const [r1, r2] = await Promise.all([emailUser(dbUser), logNewUserStats(account.accountId)])
+}
 
-// // Remember "top-level" await
+signup({ name: 'brad' }).then(() => {
+  console.log('✅ User Added')
+})
