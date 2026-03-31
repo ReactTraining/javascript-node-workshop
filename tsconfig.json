@@ -3,6 +3,7 @@
     "strict": true,
     "module": "commonjs",
     // "module": "esnext",
+    "moduleDetection": "force",
     "esModuleInterop": true,
     "jsx": "react",
     "target": "ES2020",

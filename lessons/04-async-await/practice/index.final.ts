@@ -1,5 +1,5 @@
-const API = 'http://localhost:3333'
-// const API = 'http://swapi.dev/api'
+// const API = 'http://localhost:3333'
+const API = 'http://swapi.dev/api'
 
 // Each practice below implements a main() function
 main()
