@@ -1,3 +1,4 @@
 function App() {
-  return <div>React's JSX compiles to a function call</div>
+  const message = 'hello'
+  return <div>{message.toUpperCase().substring(0, 4)}</div>
 }
