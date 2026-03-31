@@ -1,30 +1,32 @@
-// import { User, createAccount, addAccountUser } from './users'
+import { User, createAccount, addAccountUser, emailUser, logNewUserStats } from './users'
 
 // const API = 'http://localhost:3333'
-const API = 'http://swapi.dev/api'
+// const API = 'http://swapi.dev/api'
 
 /****************************************
   Part 1
 *****************************************/
 
-function getVehicle(url: string) {
-  return fetch(url).then((response) => response.json())
-}
+// async function getVehicle(url: string) {
+//   return await fetch(url).then((response) => response.json())
+// }
 
-function getPersonVehicles(id: number): Promise<string[]> {
-  return fetch(`${API}/people/${id}`)
-    .then((response) => response.json() as Record<string, any>)
-    .then((data) => data.vehicles)
-}
+// async function getPersonVehicles(id: number): Promise<string[]> {
+//   const data = await fetch(`${API}/people/${id}`).then(
+//     (response) => response.json() as Record<string, any>
+//   )
+//   return data.vehicles
+// }
 
-getPersonVehicles(1)
-  .then((vehicles) => {
-    const p = vehicles.map((url) => getVehicle(url))
-    return Promise.all(p)
-  })
-  .then((allVehicles) => {
-    console.log(allVehicles)
-  })
+// async function main() {
+//   const vehicles = await getPersonVehicles(1)
+//   const promiseArray = vehicles.map((url) => getVehicle(url))
+//   const allVehicles = await Promise.all(promiseArray)
+//   console.log(allVehicles)
+// }
+
+// main()
+// console.log('b')
 
 /****************************************
   Part 2
@@ -36,9 +38,17 @@ getPersonVehicles(1)
 //       return addAccountUser(account.accountId, user)
 //     })
 //     .then((user) => {
-//       // emailUser(user)
-//       // logNewUserStats(account.accountId)
+
+//       emailUser(user)
+//       logNewUserStats(account.accountId)
+
 //     })
+// }
+
+// async function signup(userInput: User) {
+//   const account = await createAccount()
+//   const user = await addAccountUser(account.accountId, userInput)
+//   Promise.all([emailUser(user), logNewUserStats(account.accountId)])
 // }
 
 // signup({ name: 'brad' }).then(() => {
@@ -46,3 +56,15 @@ getPersonVehicles(1)
 // })
 
 // // Remember "top-level" await
+
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve()
+    }, ms)
+  })
+}
+
+sleep(1000).then(() => {
+  console.log('it has been one second')
+})
