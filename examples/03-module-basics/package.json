@@ -1,6 +1,6 @@
 {
   "name": "module-basics",
-  "// type": "commonjs <-- default",
+  "type": "module",
   "scripts": {
     "start": "node index.js"
   }

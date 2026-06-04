@@ -5,5 +5,5 @@ const data = require('./data.json')
 // Output `Ryan's id is 2`
 
 const ryan = data.users.find((user) => user.name.includes('Ryan'))
-const name = ryan.name.split(' ')[0]
-console.log(`${name}'s id is ${ryan.id}`)
+const firstName = ryan.name.split(' ')[0]
+console.log(`${firstName}'s id is ${ryan.id}`)
