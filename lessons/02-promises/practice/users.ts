@@ -1,6 +1,6 @@
 const data = require('./data.json')
 
-interface User {
+type User = {
   id: number
   name: string
 }

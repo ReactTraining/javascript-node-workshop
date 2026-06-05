@@ -1,6 +1,6 @@
 import { getUsers } from './users'
 
-function getHTMLNames(): Promise<string> {
+function getHTMLNames() {
   return getUsers()
     .then((users) => {
       return users.map((u) => u.name)
