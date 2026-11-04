@@ -5,6 +5,6 @@
     "build": "esbuild app/index.js --bundle --outfile=build/build.js"
   },
   "devDependencies": {
-    "esbuild": "0.21.4"
+    "esbuild": "^0.28.2"
   }
 }
