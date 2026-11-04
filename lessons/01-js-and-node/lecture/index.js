@@ -11,7 +11,7 @@ console.log("let's get started")
  */
 
 // Node Versions
-// https://nodejs.dev/en/about/releases/
+// https://nodejs.org/en/about/previous-releases
 
 /**
  * Globals

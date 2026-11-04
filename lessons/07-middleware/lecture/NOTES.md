@@ -1,6 +1,6 @@
 # Middleware Lecture
 
-The path to get users is `localhost:3000/api/users` because the one-file "website" HTML that we made is hard-coded for that URL. Run the website with `npm run website`.
+The path to get users is `localhost:3000/api/users`. To demo CORS, make a one-file HTML page that fetches that URL and serve it with `npx http-server` (which runs on port 8080).
 
 ## Main Topics to Cover
 

@@ -75,14 +75,14 @@ If something goes wrong, you may need to see the [Troubleshooting](#troubleshoot
 
 A few common problems:
 
-- **You're having problems cloning the repository.** Some corporate networks block port 22, which git uses to communicate with GitHub over SSH. Instead of using SSH, clone the repo over HTTPS. Use the following command to tell git to always use `https` instead of `git`:
+- **You're having problems cloning the repository.** Some corporate networks block port 22, which git uses to communicate with GitHub over SSH. Instead of using SSH, clone the repo over HTTPS. Use the following command to tell git to always use HTTPS instead of SSH for GitHub:
 
 ```sh
-$ git config --global url."https://".insteadOf git://
+$ git config --global url."https://github.com/".insteadOf git@github.com:
 
 # This adds the following to your `~/.gitconfig`:
-[url "https://"]
-  insteadOf = git://
+[url "https://github.com/"]
+  insteadOf = git@github.com:
 ```
 
 - **You're having trouble installing Node.** We recommend using [nvm](https://github.com/creationix/nvm). nvm makes it really easy to use multiple versions of node on the same machine painlessly. After you install nvm, install the latest stable version of node with the following command:

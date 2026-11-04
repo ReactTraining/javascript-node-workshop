@@ -2,7 +2,7 @@
 // import { fakeFetch } from './utils'
 
 // const API = 'http://localhost:3333'
-const API = 'http://swapi.dev/api'
+const API = 'https://swapi.dev/api'
 
 /****************************************
   Part 1: Request

@@ -42,7 +42,7 @@ Run `npm install` without adding a package name and it will seek through all the
 
 ```sh
 # Docs for `npm install`
-# https://docs.npmjs.com/cli/v6/commands/npm-install
+# https://docs.npmjs.com/cli/commands/npm-install
 
 # This command will install all dev and production dependencies found in
 # package.json. It's typically used when you've just cloned a repo. The
@@ -144,24 +144,24 @@ Fixes dependencies and transitive dependencies when they need to be updated from
 
   // Dependencies required for your project to run
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^5.3.0"
   },
 
   // Development dependencies for your project (only needed during development)
   "devDependencies": {
-    "nodemon": "^2.0.12",
-    "eslint": "^7.32.0"
+    "nodemon": "^3.1.14",
+    "eslint": "^10.14.0"
   },
 
   // Peer dependencies (specify compatible versions of packages your project works with)
   "peerDependencies": {
-    "react": "^17.0.2"
+    "react": "^19.0.0"
   },
 
   // Engines field to specify versions of Node.js and npm your project is compatible with
   "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=6.0.0"
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
   },
 
   // Repository information (useful if your project is hosted on a platform like GitHub)

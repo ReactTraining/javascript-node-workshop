@@ -30,7 +30,7 @@ Modules:
 
 - Modules are file-based. Import any variable from a module including numbers, strings, arrays, classes, and functions.
 - We can also resolve a folder with an `index.js` file
-- Modules resolve: Core Modules, `npm_modules`, local modules
+- Modules resolve: Core Modules, `node_modules`, local modules
 
 ## Scope
 
