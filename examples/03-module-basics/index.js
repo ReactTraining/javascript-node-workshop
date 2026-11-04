@@ -1,3 +1,4 @@
-const sayHi = require('./utils')
+// Importing a default
+import bar, { hello as whatever } from './utils.js'
 
-sayHi()
+whatever()

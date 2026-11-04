@@ -16,8 +16,8 @@ This will make `package.json` which is:
 ## Alternatives
 
 - yarn
-- pnpm
-- bun
+- pnpm <-- high
+- bun (alt to npm, also runtime)
 
 ## Dependencies
 

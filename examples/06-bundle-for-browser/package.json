@@ -3,16 +3,17 @@
   "type": "module",
   "scripts": {
     "// Can't run two things in parallel": "",
-    "dev-bad": "npm run dev:build && npm run dev:server",
     "dev:build": "node scripts/run-build.js",
-    "dev:server": "http-server build -p 3000",
+    "dev:server": "http-server build -p 3001",
     "// Explain run-p, aka npm-run-all --parallel": "",
     "dev": "run-p dev:*"
   },
   "devDependencies": {
     "chokidar": "^3.6.0",
     "esbuild": "^0.28.2",
-    "http-server": "^14.1.1",
-    "npm-run-all": "^1.1.3"
+    "http-server": "^14.1.1"
+  },
+  "dependencies": {
+    "npm-run-all2": "^8.0.4"
   }
 }

@@ -1,5 +1,7 @@
-function sayHi() {
-  console.log("Hello CommonJS (Node's original module resolver)")
+export default function fooo() {
+  console.log("Hello ESM (Node's better module resolver)")
 }
 
-module.exports = sayHi
+export function hello() {
+  console.log('hello')
+}
