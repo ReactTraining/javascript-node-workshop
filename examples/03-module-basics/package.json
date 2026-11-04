@@ -1,6 +1,7 @@
 {
   "name": "module-basics",
   "// type": "commonjs <-- default",
+  "// type": "module <-- ESM",
   "scripts": {
     "start": "node index.js"
   }
