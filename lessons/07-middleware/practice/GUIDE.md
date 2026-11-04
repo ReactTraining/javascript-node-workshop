@@ -13,7 +13,7 @@ http://localhost:3000/account
 We're going to create "Authentication Middleware" that checks if the path is `/account` and provides meta-data to all the other middleware routes that might need it. We don't want someone to visit `/account` if they're not authenticated, so the middleware will respond with a 401 status code (not authorized) and return to the client if the request shouldn't be allowed.
 
 - Create some middleware that runs anytime someone does a `GET` request to `/account`. We already did some of this part for you. We already wrote some middleware that prints the authenticated user when you go to any route, so just start by changing the route path to `/account`.
-- Try commenting out the `next()` line in that route and visit `/account` again. You won't see anything come to the browser because the server is stuck and doesn't know what to do. The express server will only respond to the client when something like `res.send` is called or `next()`. Don't worry, if you put it back and save the code, nodemon which is listening for file changes will restart the server so that will "un-stick" it.
+- Try commenting out the `next()` line in that route and visit `/account` again. You won't see anything come to the browser because the server is stuck and doesn't know what to do. The express server will only respond to the client when something like `res.send` is called or `next()`. Don't worry, if you put it back and save the code, `tsx watch` (which is listening for file changes) will restart the server so that will "un-stick" it.
 - By calling `next()` you're saying you want Express to continue onto the next matching middleware (all routes are middleware). The next matching one is the one that is returning:
 
 > Hello undefined, you are logged in

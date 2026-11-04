@@ -1,5 +1,5 @@
 const major = process.versions.node.split('.')[0]
-const MIN_VERSION = 20
+const MIN_VERSION = 22
 
 try {
   if (Number(major) >= MIN_VERSION) {

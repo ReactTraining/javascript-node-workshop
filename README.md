@@ -10,7 +10,7 @@ Before attending the training, please make sure you install the code (not just c
 - [ ] [Learn the JavaScript syntax that matters the most to React](https://reacttraining.com/blog/javascript-the-react-parts/). Even though this is a "Node" workshop, all the material in that article still applies since it's trying to bring you up to speed with modern JS syntax.
 - [ ] WAIT! Does your company or computer use a VPN or any sort of proxy? That might cause some issues. Someone on your team probably knows how to get around the issues. We can't really help out because the issues surrounding VPN's and Proxies are so diverse and out of our control.
 
-## Install Git, Node v20 or higher, and NPM
+## Install Git, Node v22 or higher, and NPM
 
 If you have any problems with these steps, make sure you see the [Troubleshooting](#troubleshooting) section below.
 
@@ -29,7 +29,7 @@ If you need to verify that you have NVM installed: `nvm --version`. Then install
 # See this page for more install options: https://github.com/nvm-sh/nvm#usage
 $ nvm install node
 
-# If you can, try to use Node v20 or higher
+# If you can, try to use Node v22 or higher
 
 # lists out the versions of node that you're managing with nvm including
 # which one is the current one in your CLI
@@ -40,7 +40,7 @@ Verify you have Git, Node, and NPM installed. Installing Node will install NPM.
 
 ```sh
 $ git --version
-$ node --version # If you can, try to use Node v20 or higher
+$ node --version # If you can, try to use Node v22 or higher
 $ npm --version
 ```
 
