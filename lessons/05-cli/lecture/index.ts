@@ -10,6 +10,7 @@ const lessonFolders = fs.readdirSync(lessonsPath).filter((item) => {
 })
 
 const choice = readlineSync.keyInSelect(lessonFolders)
+console.log(choice)
 if (choice === -1) {
   process.exit(0)
 }

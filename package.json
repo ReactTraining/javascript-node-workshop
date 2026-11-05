@@ -20,7 +20,7 @@
     "practice-2": "tsx lessons/02-promises/practice/index.ts",
     "practice-3": "",
     "practice-4": "tsx lessons/04-async-await/practice/index.ts",
-    "practice-5": "tsx lessons/05-cli/practice/index.ts",
+    "practice-5": "tsx lessons/05-cli/practice/index.final.ts",
     "practice-6": "tsx watch lessons/06-server/practice/index.ts || exit 0",
     "practice-7": "tsx watch lessons/07-middleware/practice/index.ts || exit 0",
     "practice-8": "tsx watch lessons/08-authentication/practice/index.ts || exit 0"

@@ -4,6 +4,12 @@ import { query } from './db'
 const app = express()
 const port = 3000
 
+function validateParameters(schema) {
+  return (req, res, next) => {
+    // validate
+  }
+}
+
 app.get('/', (req, res) => {
   res.send('<h1>Express Home<h1>')
 })
@@ -16,7 +22,7 @@ app.get('/users', (req, res, next) => {
     .catch(next)
 })
 
-app.get('/users/:id', (req, res, next) => {
+app.get('/users/:id', validateParameters({ id: z.number() }), (req, res, next) => {
   const { id } = req.params
   if (!isInteger(id)) {
     next()

@@ -1,13 +1,26 @@
 import express from 'express'
+
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('<h1>Express Home<h1>')
+app.get('/', (req, res, next) => {
+  res.send('<h1>Express Home 1<h1>')
+})
+
+app.get('/login', (req, res) => {
+  res.send('<h1>Express Users<h1>')
 })
 
 app.get('/users', (req, res) => {
   res.send('<h1>Express Users<h1>')
+})
+
+app.get('/account', (req, res) => {
+  res.send('<h1>Express Users<h1>')
+})
+
+app.get('/', (req, res) => {
+  res.send('<h1>Express Home 2<h1>')
 })
 
 app.use((req, res) => {
