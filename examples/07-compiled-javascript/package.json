@@ -4,7 +4,7 @@
     "compile": "babel app --out-dir build"
   },
   "devDependencies": {
-    "@babel/cli": "^8.1.0",
+    "@babel/cli": "^7.24.6",
     "@babel/core": "^7.24.6",
     "@babel/plugin-transform-react-jsx": "^7.24.6",
     "@babel/preset-env": "^7.24.6",
